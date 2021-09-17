@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 import database_services.RDBService as d_service
 from flask_cors import CORS
 import json
@@ -11,7 +11,8 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Hello Patis World!'
+    # return render_template(static/simple-test.html)
 
 
 @app.route('/imdb/artists/<prefix>')
