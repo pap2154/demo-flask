@@ -28,6 +28,13 @@ def get_by_prefix(db_schema, table_name, column_name, prefix):
     rsp = Response(json.dumps(res), status=200, content_type="application/json")
     return rsp
 
+@app.route('/users')
+def get_users():
+    res = d_service.get_resource("user_address", "User")
+    rsp = Response(json.dumps(res), status=200, content_type="application/json")
+    return rsp
+
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
